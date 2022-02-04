@@ -1,4 +1,6 @@
+import "../styles/_main.scss";
 import { wrapper } from "../store";
+
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

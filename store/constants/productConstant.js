@@ -1,0 +1,2 @@
+export const GET_PRODUCT_SUCCESS = "GET_SUCCESS";
+export const GET_PRODUCT_FAILUR = "GET_FAILUR";

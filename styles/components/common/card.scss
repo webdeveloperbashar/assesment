@@ -1,0 +1,64 @@
+@mixin PHStyle {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: normal;
+  color: $text-dark-gray;
+}
+.card_wrapper {
+  background: $bg-menu;
+  margin: 6px 15px;
+  border-radius: 5px;
+  padding: 15px;
+  min-width: 219px;
+  cursor: pointer;
+  .card_inner {
+    .card_top {
+      display: flex;
+      margin-bottom: 14px;
+      img {
+        margin-right: 20px;
+      }
+      .product_details {
+        .name {
+          h2 {
+            @include PHStyle();
+            font-size: 15px;
+            color: $text-white;
+          }
+        }
+        .brand {
+          margin-top: 10px;
+          h3 {
+            @include PHStyle();
+            font-size: 13px;
+          }
+        }
+        .price {
+          margin-top: 10px;
+          p {
+            @include PHStyle();
+            font-size: 13px;
+          }
+        }
+      }
+    }
+    .card_bottom {
+      .lc_date {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p {
+          @include PHStyle();
+          font-size: 13px;
+        }
+      }
+      .description {
+        margin-top: 8px;
+        p {
+          @include PHStyle();
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

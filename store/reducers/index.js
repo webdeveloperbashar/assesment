@@ -1,6 +1,6 @@
-import { combineReducers } from "redux";;
-
+import { combineReducers } from "redux";
+import { getProduct } from "./productReducer";
 
 export const rootReducer = combineReducers({
-    user: "bashar"
-})
+  products: getProduct,
+});
