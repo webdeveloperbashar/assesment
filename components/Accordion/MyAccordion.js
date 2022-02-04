@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import arrow from "../../assets/icon/arrow.png";
 
-const MyAccordion = ({ menu, dropDown }) => {
+const MyAccordion = ({ menu, products, state, city }) => {
   const [openDropdown, setOpenDropdown] = useState(false);
   return (
     <div className="dropdown_menu">
@@ -12,9 +12,17 @@ const MyAccordion = ({ menu, dropDown }) => {
       </div>
       <div className={`content ${openDropdown ? "openDropdown" : ""}`}>
         <ul>
-          {dropDown &&
-            dropDown.map((pdName) => (
+          {products &&
+            products.map((pdName) => (
               <li key={pdName.time}>- {pdName.product_name}</li>
+            ))}
+          {state &&
+            state.map((pdName, index) => (
+              <li key={index + 1}>- {pdName.state}</li>
+            ))}
+          {city &&
+            city.map((pdName, index) => (
+              <li key={index + 1}>- {pdName.city}</li>
             ))}
         </ul>
       </div>

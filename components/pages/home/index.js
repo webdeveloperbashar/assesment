@@ -33,6 +33,7 @@ const Index = ({ setDrawer }) => {
                 productBrand={item.brand_name}
                 productPrice={item.price}
                 location={item.address.city}
+                state={item.address.state}
                 date={item.date}
                 description={item.discription}
               />

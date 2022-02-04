@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { productSelect } from "../../store/actions/productSelectAction";
 
 const Card = ({
   img,
@@ -8,13 +10,16 @@ const Card = ({
   productBrand,
   productPrice,
   location,
+  state,
   date,
   description,
 }) => {
-  var dates = new Date(date);
-  console.log(dates.toLocaleDateString("en-US").split("/").join(":"));
+  const dispatch = useDispatch();
   return (
-    <div className="card_wrapper">
+    <div
+      className="card_wrapper"
+      onClick={() => dispatch(productSelect({ state: state, city: location }))}
+    >
       <div className="card_inner">
         <div className="card_top">
           <img src={img} width={imgWidth} height={imgHeight} alt="cardImg" />
@@ -34,7 +39,8 @@ const Card = ({
           <div className="lc_date">
             <p>{location}</p>
             <p>
-              Date: {new Date(date).toLocaleDateString("en-US").split("/").join(":")}
+              Date:{" "}
+              {new Date(date).toLocaleDateString("en-US").split("/").join(":")}
             </p>
           </div>
           <div className="description">

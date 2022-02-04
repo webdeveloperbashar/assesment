@@ -3,29 +3,32 @@ import MyAccordion from "./MyAccordion";
 import { useSelector } from "react-redux";
 
 const Accordion = () => {
+  // all product names
   const products = useSelector((state) => state.products.products);
+  // all product state and city
+  const address = useSelector((state) => state.selectProducts.selectProducts);
   const menuList = [
     {
       id: 1,
       menu: "Product",
-      dropDown: products,
+      products: products,
     },
     {
       id: 2,
       menu: "State",
-      dropDown: products,
+      state: address,
     },
     {
       id: 3,
       menu: "City",
-      dropDown: products,
+      city: address,
     },
   ];
 
   return (
     <>
-      {menuList.map((elem) => (
-        <MyAccordion key={elem.id} {...elem} />
+      {menuList.map((elem, index) => (
+        <MyAccordion key={index + 1} {...elem} />
       ))}
     </>
   );

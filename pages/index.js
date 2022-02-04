@@ -14,6 +14,9 @@ const Index = ({ data }) => {
   return (
     <Layouts>
       <Sidebar drawer={drawer} setDrawer={setDrawer} />
+      {drawer && (
+        <div className="backdrop" onClick={() => setDrawer(false)}></div>
+      )}
       <Home setDrawer={setDrawer} />
     </Layouts>
   );
