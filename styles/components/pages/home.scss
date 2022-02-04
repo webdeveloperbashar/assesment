@@ -1,0 +1,82 @@
+@import "../../responsive/breakpoints";
+.home_wrapper {
+  width: 80%;
+  float: right;
+  margin-bottom: 40px;
+  @include breakpoints(smLaptop) {
+    width: 75%;
+  }
+  @include breakpoints(semiTablet) {
+    width: 70%;
+  }
+  @include breakpoints(tablet) {
+    width: 100%;
+  }
+  .home_container {
+    .heading {
+      color: $text-white;
+      font-family: $font-family;
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h3 {
+          font-size: 35px;
+        }
+        span {
+          font-size: 20px;
+          cursor: pointer;
+          display: none;
+          @include breakpoints(tablet) {
+            display: block;
+          }
+        }
+      }
+
+      p {
+        font-size: 25px;
+        margin-top: 20px !important;
+        color: $text-dark-gray;
+      }
+    }
+
+    .slider_content {
+      .slider_heading {
+        border-bottom: 1px solid $border-color-1;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        h3 {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 23px;
+          color: $text-white;
+          margin-bottom: 17px !important;
+        }
+      }
+      .slider_product {
+        background: $bg-sidebar;
+        padding: 21px;
+        border-radius: 15px;
+        display: flex;
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background: #8e8e8e5e;
+          border-radius: 50px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: #747474;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}
